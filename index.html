@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi bubu ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+background:linear-gradient(180deg,#fff0f5,#ffe4ec,#fff);
+overflow-x:hidden;
+color:#333;
+}
+.hero{
+height:100vh;
+background:url('ositos.jpg') center center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+}
+.hero:before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(0,0,0,.55),rgba(255,105,180,.25));
+backdrop-filter:blur(2px);
+}
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+color:white;
+padding:20px;
+animation:fade 2s ease;
+}
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+}
+.hero p{font-size:1.2rem}
+@keyframes fade{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+
+.section{max-width:950px;margin:auto;padding:80px 20px}
+.glass{
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(12px);
+border-radius:30px;
+padding:35px;
+box-shadow:0 10px 40px rgba(0,0,0,.12);
+}
+h2{
+font-family:'Playfair Display',serif;
+margin-bottom:20px;
+color:#d63384;
+}
+.letter{line-height:1.9;font-size:1.05rem}
+.counter{
+font-size:2rem;
+text-align:center;
+font-weight:600;
+color:#d63384;
+}
+.btn{
+background:linear-gradient(45deg,#ff4d8d,#ff80ab);
+border:none;
+padding:16px 28px;
+border-radius:999px;
+color:white;
+font-size:1.1rem;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(255,77,141,.4);
+}
+.btn:hover{transform:scale(1.05)}
+#secret{display:none;margin-top:25px}
+.heart{
+position:fixed;
+font-size:22px;
+top:-20px;
+animation:fall linear forwards;
+pointer-events:none;
+}
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+footer{
+padding:40px;
+text-align:center;
+color:#888;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Para mi bubu ❤️</h1>
+<p>Dos años de amor, distancia, mañitas y muchísimos tiamo.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="glass">
+<h2>💌 Una carta para vos</h2>
+<div class="letter">
+Hola bubu ❤️<br><br>
+
+Hoy cumplimos 2 años juntos y no puedo evitar pensar en todo lo que vivimos desde que empezó nuestra historia.<br><br>
+
+Tuvimos momentos hermosos, risas, llamadas interminables, mañitas, desvelos y recuerdos que voy a guardar para siempre.<br><br>
+
+También tuvimos nuestras peleas, algunas más suaves y otras más fuertes. Hubo días donde la distancia se sintió pesada y momentos donde las cosas parecían complicadas.<br><br>
+
+Pero acá seguimos.<br>
+Siguiendo adelante.<br>
+Eligiéndonos todos los días.<br>
+Dándolo todo por seguir juntos.<br><br>
+
+Y eso es lo que más amo de nosotros.<br><br>
+
+Gracias por quedarte, por entenderme, por acompañarme y por hacerme sentir querido incluso estando lejos.<br><br>
+
+No sé qué nos espera mañana, pero sí sé que quiero seguir construyendo esta historia con vos.<br><br>
+
+Feliz aniversario, mi bubu. ❤️<br><br>
+
+<b>Tuyo hasta en la distancia.</b><br>
+<b>Tiamo muchísimo ❤️</b>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="glass">
+<h2>⏳ Nuestro tiempo juntos</h2>
+<div class="counter" id="contador"></div>
+</div>
+</section>
+
+<section class="section">
+<div class="glass" style="text-align:center">
+<h2>🎁 Regalito para chuchi</h2>
+<button class="btn" onclick="mostrar()">Abrir sorpresa ❤️</button>
+<div id="secret">
+<br><br>
+<h2>❤️ Mensaje secreto ❤️</h2>
+<p style="line-height:2">
+Si llegaste hasta acá, quiero que sepas algo.<br><br>
+
+Entre millones de personas, mi lugar favorito seguís siendo vos.<br><br>
+
+Gracias por cada llamada, cada mensaje y cada momento compartido.<br>
+Gracias por no rendirte cuando las cosas fueron difíciles.<br>
+Gracias por ser mi compañera en esta aventura a distancia.<br><br>
+
+Y si pudiera volver al principio...<br>
+Te volvería a elegir una y mil veces más. ❤️<br><br>
+
+❤️ Tiamo ❤️<br>
+❤️ Tiamo ❤️<br>
+❤️ Tiamo ❤️
+</p>
+</div>
+</div>
+</section>
+
+<footer>
+07/06/2024 • Para mi bubu ❤️
+</footer>
+
+<script>
+const inicio=new Date("2024-06-07T00:00:00");
+
+function actualizar(){
+ const ahora=new Date();
+ const diff=ahora-inicio;
+
+ const dias=Math.floor(diff/(1000*60*60*24));
+ const horas=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+ const min=Math.floor((diff%(1000*60*60))/(1000*60));
+
+ document.getElementById("contador").innerHTML=
+ dias+" días<br>"+horas+" horas<br>"+min+" minutos ❤️";
+}
+setInterval(actualizar,1000);
+actualizar();
+
+function mostrar(){
+ document.getElementById("secret").style.display="block";
+
+ for(let i=0;i<150;i++){
+   const h=document.createElement("div");
+   h.className="heart";
+   h.innerHTML=Math.random()>0.5?"❤️":"💖";
+   h.style.left=Math.random()*100+"vw";
+   h.style.animationDuration=(3+Math.random()*4)+"s";
+   document.body.appendChild(h);
+   setTimeout(()=>h.remove(),7000);
+ }
+}
+</script>
+</body>
+</html>
